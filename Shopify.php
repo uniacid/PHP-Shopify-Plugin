@@ -1,6 +1,6 @@
 <?php
 
-class Shopify extends Plugin
+class Shopify
 {
     public $api_key;
     public $password;
