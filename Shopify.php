@@ -1,6 +1,6 @@
 <?php
 
-class Shopify
+class Shopify extends Plugin
 {
     public $api_key;
     public $password;
@@ -94,7 +94,7 @@ class Shopify
                 $this->result->success = true;
                 $this->result->status = $this->last_response_headers['http_status_message'];
                 $this->result->data = json_decode($message_body, true);
-        } else {                                                                                                                            // HTTP Failed
+            } else {                                                                                                                            // HTTP Failed
                 $this->result->message = curl_error($ch);
                 $this->result->error = curl_error($ch);
                 $this->result->error_number = curl_errno($ch);
